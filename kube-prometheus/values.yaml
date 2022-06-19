@@ -1,0 +1,8 @@
+kube-prometheus:
+  prometheus:
+    persistence:
+      enabled: true
+    thanos:
+      create: true
+  alertmanager:
+    enabled: false

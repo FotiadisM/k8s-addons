@@ -1,0 +1,8 @@
+thanos:
+  query:
+    stores:
+    - dnssrv+_grpc._tcp.kube-prometheus-prometheus-thanos.monitoring.svc.cluster.local
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true

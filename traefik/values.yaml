@@ -1,0 +1,32 @@
+traefik:
+  image:
+    tag: "2.6.1"
+
+  ingressRoute:
+    dashboard:
+      enabled: false
+
+  providers:
+    kubernetesIngress:
+      publishedService:
+        enabled: true
+    kubernetesCRD:
+      allowCrossNamespace: true # allow cross-namespace references for middlewares
+
+  ports:
+    web:
+      port: 80
+    websecure:
+      port: 443
+    webudp:
+      port: 51820
+      expose: true
+      exposedPort: 51820
+      protocol: UDP
+
+
+  # Enable HTTPS redirection on web entrypoint
+  additionalArguments:
+  - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+  - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+  - "--entrypoints.web.http.redirections.entrypoint.permanent=true"

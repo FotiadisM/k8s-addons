@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx.mfotiadis.com
+spec:
+  dnsNames:
+    - nginx.mfotiadis.com
+  secretName: nginx.mfotiadis.com
+  issuerRef:
+    name: acme-staging
+    kind: ClusterIssuer

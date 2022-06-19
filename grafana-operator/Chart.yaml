@@ -1,0 +1,7 @@
+apiVersion: v2
+name: grafana-operator
+version: 1.0.0
+dependencies:
+  - name: grafana-operator
+    repository: https://charts.bitnami.com/bitnami
+    version: 2.6.3

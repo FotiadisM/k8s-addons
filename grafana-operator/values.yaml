@@ -1,0 +1,8 @@
+grafana-operator:
+  operator:
+    prometheus:
+     serviceMonitor:
+       enabled: true
+  grafana:
+    labels:
+      app.kubernetes.io/name: grafana

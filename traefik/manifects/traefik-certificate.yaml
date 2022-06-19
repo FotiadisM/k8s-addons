@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: traefik.mfotiadis.com
+spec:
+  dnsNames:
+    - traefik.mfotiadis.com
+  secretName: traefik.mfotiadis.com
+  issuerRef:
+    name: acme-staging
+    kind: ClusterIssuer

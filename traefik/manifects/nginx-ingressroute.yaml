@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`nginx.mfotiadis.com`)
+    kind: Rule
+    services:
+    - name: nginx
+      kind: Service
+      port: 80
+  # tls: {}
+  # tls:
+  #   secretName: nginx.mfotiadis.com
